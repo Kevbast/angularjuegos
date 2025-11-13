@@ -1,0 +1,36 @@
+<div>
+    <h1>LISTA DE JUGADORES</h1>
+    <div
+        class="table-responsive"
+    >
+        <table
+            class="table table-primary"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">idJugador</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">posicion</th>
+                    <th scope="col">imagen</th>
+                    <th scope="col">fechaNacimiento</th>
+                    <th scope="col">pais</th>
+                    <th scope="col">idEquipo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (jugador of jugadores; track $index) {
+                    <tr>
+                        <td>{{jugador.idJugador}}</td>
+                        <td>{{jugador.nombre}}</td>
+                        <td>{{jugador.posicion}}</td>
+                        <td><img src="{{jugador.imagen}}" style="width: 150px;height: 150px;"></td>
+                        <td>{{jugador.fechaNacimiento}}</td>
+                        <td>{{jugador.pais}}</td>
+                        <td>{{jugador.idEquipo}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+</div>

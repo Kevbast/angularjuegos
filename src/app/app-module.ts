@@ -6,10 +6,19 @@ import { App } from './app';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { ServiceFiles } from '../services/servicesFiles';
+import { MenuComponent } from './components/menu-component/menu-component';
+import { EquiposComponent } from './components/equipos-component/equipos-component';
+import { JugadoresComponent } from './components/jugadores-component/jugadores-component';
+import { HomeComponent } from './components/home-component/home-component';
+import { ServiceFutbol } from '../services/service.futbol';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    MenuComponent,
+    EquiposComponent,
+    JugadoresComponent,
+    HomeComponent
   ],
   imports: [
     FormsModule,
@@ -17,7 +26,7 @@ import { ServiceFiles } from '../services/servicesFiles';
     AppRoutingModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners(),provideHttpClient(),ServiceFiles
+    provideBrowserGlobalErrorListeners(),provideHttpClient(),ServiceFiles,ServiceFutbol
   ],
   bootstrap: [App]
 })
