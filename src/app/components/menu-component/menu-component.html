@@ -12,9 +12,6 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/']">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/equipos']">Equipos</a>
-        </li>
         <!-- no hace nada por ahora -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -29,9 +26,11 @@
           </ul>
         </li>
       </ul>
-     <form class="form-inline" #plantillaForm="ngForm">
-        <input class="form-control mr-sm-2" type="search" name="cajanombre" #cajanombre class="form-control" placeholder="Search" aria-label="Search">
-        <button (click)="buscarJugador()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+     <form class="d-flex" #plantillaForm="ngForm">
+    <input class="form-control me-2" type="search" name="cajanombre" #cajanombre placeholder="Buscar jugador" aria-label="Search">
+    <button (click)="buscarJugador()" class="btn btn-outline-success" type="submit">
+        Search
+    </button>
     </form>
 
     </div>

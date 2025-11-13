@@ -1,5 +1,71 @@
-<div>
-    <h1>EQUIPO CON SUS JUGADORES</h1>
-    
+<div class="container">
+    @if (datosEquipo) {
+        <div class="team-layout">
+            <!-- SECCIÓN IZQUIERDA: EQUIPO -->
+            <div class="team-section">
+                <div class="team-card">
+                    <!-- Banner del equipo -->
+                    <div class="team-banner">
+                        <img src={{datosEquipo.equipo.imagen}} alt={{datosEquipo.equipo.nombre}} class="banner-bg"/>
+                        <div class="banner-overlay"></div>
+                        <div class="team-logo-container">
+                            <img src={{datosEquipo.equipo.imagen}} alt="Escudo" class="team-logo"/>
+                        </div>
+                    </div>
 
+                    <!-- Info del equipo -->
+                    <div class="team-info">
+                        <h1 class="team-name">{{ datosEquipo.equipo.nombre }}</h1>
+                        <div class="champions-badge">
+                            <span class="trophy-icon">🏆</span>
+                            <span>{{ datosEquipo.equipo.champions }} Champions</span>
+                        </div>
+                    </div>
+
+                    <!-- Descripción -->
+                    <div class="team-description">
+                        <p>{{ datosEquipo.equipo.descripcion }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN DERECHA: JUGADORES -->
+            <div class="players-section">
+                <div class="players-header">
+                    <span class="user-icon">👥</span>
+                    <h2>Plantilla</h2>
+                </div>
+
+                <div class="players-grid">
+                    @for (player of datosEquipo.jugadores; track player) {
+                        <div class="player-card">
+                            <div class="player-image-container">
+                                <img [src]="player.imagen" [alt]="player.nombre"/>
+                                <span class="position-badge" style="color:black; background-color: gold;">
+                                    {{ player.posicion }}
+                                </span>
+                            </div>
+                            <div class="player-info">
+                                <h3>{{ player.nombre }}</h3>
+                                <div class="player-details">
+                                    <div class="detail-row">
+                                        <span class="icon">📅</span>
+                                        <span class="label">Nacimiento:</span>
+                                        <span class="value">{{ player.fechaNacimiento }}</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="icon">📍</span>
+                                        <span class="label">País:</span>
+                                        <span class="value">{{ player.pais }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }@else{
+        <img src="https://cdn.dribbble.com/users/379146/screenshots/15939674/loading.gif" alt="Keep calm" class="loading-image"/>
+    }
 </div>
