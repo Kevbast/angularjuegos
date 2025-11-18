@@ -14,6 +14,7 @@ import { delay, switchMap } from 'rxjs/operators';
 })
 export class EquiposComponent implements OnInit{
 
+  
 public equipo!:Equipo;
 public datosEquipo!:DatosEquipo;
 public idEquiporecibido!:number;
